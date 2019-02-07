@@ -2,10 +2,10 @@
 	<div class="col-md-12">
 		<div class="card">
 			<div class="card-header" data-background-color="blue">
-				<h4 class="title">Tipos de estudios</h4>
+				<h4 class="title">Registro de Profesores y talleristas</h4>
 			</div>
 			<div class="card-content table-responsive">
-				<a href="index.php?view=newcategory" class="btn btn-primary"><i class='fa fa-plus-circle'></i> Agregar Estudio</a>
+				<a href="index.php?view=newcategory" class="btn btn-success"><i class='fa fa-plus-circle'></i> Ingresar un nuevo Profesor</a>
 				<?php
 				$users = CategoryData::getAll();
 				if(count($users)>0){

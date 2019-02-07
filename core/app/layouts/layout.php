@@ -35,11 +35,12 @@
 <?php if(isset($_SESSION["user_id"])):?>
   <div class="wrapper">
     <div class="sidebar" data-color="blue">
-      <div class="logo">
-        <a></a>
-      </div>      
+      <br>
+      <br>      
       <div class="sidebar-wrapper">
-        <img src="img/pd.png" style="width: 60%">
+        <div class="text-center">
+          <img src="img/pd.png" style="width: 60%">
+        </div>
         <ul class="nav">
             <li class="">
                 <a href="./">
@@ -49,25 +50,25 @@
             </li>
             <li>
                 <a href="./?view=reservations">
-                    <i class="fa fa-calendar"></i>
+                    <i class="fa fa-user-plus"></i>
                     <p>Inscripcion a cursos</p>
                 </a>
             </li>
             <li>
                 <a href="./?view=pacients">
-                    <i class="fa fa-male"></i>
+                    <i class="fa fa-users"></i>
                     <p>Alumnos</p>
                 </a>
             </li>
             <li>
                 <a href="./?view=medics">
-                    <i class="fa fa-user-md"></i>
+                    <i class="fa fa-bookmark"></i>
                     <p>Cursos</p>
                 </a>
             </li>
             <li>
                 <a href="./?view=categories">
-                    <i class="fa fa-medkit"></i>
+                    <i class="fa fa-graduation-cap"></i>
                     <p>Profesores</p>
                 </a>
             </li>
@@ -84,13 +85,14 @@
                     <p>Reportes</p>
                 </a>
             </li>
+            -->
             <li>
                 <a href="./?view=users">
-                    <i class="fa fa-users"></i>
+                    <i class="fa fa-user"></i>
                     <p>Usuarios</p>
                 </a>
             </li>
-          -->
+          
              <li>
                 <a href="logout.php">
                     <i class="fa fa-power-off"></i>
@@ -126,7 +128,7 @@
       <footer class="footer">
         <div class="container-fluid">
           <p class="copyright pull-right">Sistema Web creado por     
-            <a href="http://www.oestedev.com" target="_blank"><img style="width: 60px" src="../img/logo.png">  </a>
+            <a href="http://www.oestedev.com" target="_blank"><img style="width: 60px" src="img/oestedev.png">  </a>
           </p>
         </div>
       </footer>

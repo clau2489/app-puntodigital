@@ -2,16 +2,17 @@
 	<div class="col-md-12">
 		<div class="card">
 			<div class="card-header" data-background-color="blue">
-				<h4 class="title">Administración de Turnos</h4>
+				<h4 class="title">Inscripción a cursos</h4>
 			</div>
 			<div class="card-content table-responsive">
 				<div class="row">
 					<div class="col-md-2">
-						<a href="./index.php?view=newreservation" class="btn btn-block btn-primary"><i class='fa fa-plus-circle'></i> Nuevo Turno</a>						
+						<a href="./index.php?view=newreservation" class="btn btn-success"><i class='fa fa-plus-circle'></i> Generar una Inscripción</a>						
 					</div>
+					<!--
 					<div class="col-md-2">
 						<a href="./index.php?view=oldreservations" class="btn btn-block btn-warning"><i class='fa fa-folder-open'></i> Anteriores</a>						
-					</div>					
+					</div>	-->				
 				</div>
 			<br>
 			<br>
@@ -91,7 +92,7 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 
 
 		}else{
-			echo "<p class='alert alert-danger'>No hay pacientes</p>";
+			echo "<p class='alert alert-danger'>No hay alumnos cargados</p>";
 		}
 
 

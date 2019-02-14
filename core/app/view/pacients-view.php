@@ -1,9 +1,17 @@
+<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/> 
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
 			<div class="card-header" data-background-color="blue">
 				<h4 class="title">Listado de Alumnos</h4>
 			</div>
+			<form class="form-horizontal" role="form">
+				<input type="hidden" name="view" value="reports">
+		        <?php
+				$pacients = PacientData::getAll();
+		        ?>
+			</form>
 			<div class="card-content table-responsive">
 				<a href="index.php?view=newpacient" class="btn btn-primary"><i class='fa fa-plus-circle'></i> Agregar nuevo</a>
 				<?php
@@ -11,7 +19,7 @@
 				if(count($users)>0){
 					// si hay usuarios
 					?>
-					<table class="table table-bordered table-hover">
+					<table id="example" class="display" style="width:90%">
 					<thead>
 					<th>Nombre completo</th>
 					<th>Documento</th>
@@ -48,3 +56,8 @@
 		?>
 	</div>
 </div>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>

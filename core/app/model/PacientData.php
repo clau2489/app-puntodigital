@@ -62,6 +62,10 @@ class PacientData {
 		return Model::many($query[0],new PacientData());
 	}
 
+	public static function getBySQL($sql){
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new PacientData());
+	}
 
 	public function getUnreads(){ return MessageData::getUnreadsByClientId($this->id); }
 

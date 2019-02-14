@@ -78,14 +78,14 @@
                     <i class="fa fa-th-list"></i>
                     <p>Coberturas</p>
                 </a>
-            </li>
+            </li>-->
             <li>
                 <a href="./?view=reports">
                     <i class="fa fa-area-chart"></i>
                     <p>Reportes</p>
                 </a>
             </li>
-            -->
+            
             <li>
                 <a href="./?view=users">
                     <i class="fa fa-user"></i>

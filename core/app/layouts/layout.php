@@ -6,20 +6,19 @@
   <title>Punto Digital</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <meta name="viewport" content="width=device-width" />
-  <link rel="shortcut icon" href="img/pd.png" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="assets/css/material-dashboard.css" rel="stylesheet"/>
   <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>  
   <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <?php if(isset($_GET["view"]) && $_GET["view"]=="home"):?>
   <link href='assets/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
   <link href='assets/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
   <script src='assets/fullcalendar/moment.min.js'></script>
   <script src='assets/fullcalendar/fullcalendar.min.js'></script>
   <?php endif; ?>
-  <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
-  <script src="assets/js/bootstrap-select.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/i18n/defaults-*.min.js"></script>
   <script>
     function printDiv(divName) {
@@ -43,7 +42,6 @@
           <img src="img/pd.png" style="width: 60%">
         </div>
         <ul class="nav">
-            
             <li class="">
                 <a href="./">
                     <i class="fa fa-home"></i>
@@ -53,52 +51,52 @@
             <li>
                 <a href="./?view=reservations">
                     <i class="fa fa-user-plus"></i>
-                    <p>Generar Inscripción</p>
+                    <p>Inscripcion a cursos</p>
                 </a>
             </li>
             <li>
                 <a href="./?view=pacients">
                     <i class="fa fa-users"></i>
-                    <p>Lista de Usuarios</p>
+                    <p>Alumnos</p>
                 </a>
             </li>
-            <li>
-                <a href="./?view=coverages">
-                    <i class="fa fa-th-list"></i>
-                    <p>Categorías de Usuarios</p>
-                </a>
-            </li>            
             <li>
                 <a href="./?view=medics">
-                  <i class="fa fa-graduation-cap"></i>
-                  <p>Actividades</p>   
+                    <i class="fa fa-bookmark"></i>
+                    <p>Cursos</p>
                 </a>
             </li>
-
             <li>
                 <a href="./?view=categories">
-                    <i class="fa fa-bookmark"></i>
-                    <p>Lista de Cursos</p>
+                    <i class="fa fa-graduation-cap"></i>
+                    <p>Profesores</p>
                 </a>
             </li>
             <!--
+            <li>
+                <a href="./?view=coverages">
+                    <i class="fa fa-th-list"></i>
+                    <p>Coberturas</p>
+                </a>
+            </li>-->
             <li>
                 <a href="./?view=reports">
                     <i class="fa fa-area-chart"></i>
                     <p>Reportes</p>
                 </a>
-            </li> -->
+            </li>
+            
             <li>
                 <a href="./?view=users">
                     <i class="fa fa-user"></i>
-                    <p>Administradores</p>
+                    <p>Usuarios</p>
                 </a>
             </li>
           
              <li>
                 <a href="logout.php">
                     <i class="fa fa-power-off"></i>
-                    <p>Cerrar Sesión</p>
+                    <p>Salir</p>
                 </a>
             </li>            
         </ul>
@@ -129,11 +127,11 @@
       </div>
       <footer class="footer">
         <div class="container-fluid">
-          <p class="copyright pull-right">Aplicación Web creada por     
+          <p class="copyright pull-right">Sistema Web creado por     
             <a href="http://www.oestedev.com" target="_blank"><img style="width: 60px" src="img/oestedev.png">  </a>
           </p>
         </div>
-      </footer>      
+      </footer>
     </div>
   </div>
     <?php else:?>

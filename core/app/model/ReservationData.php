@@ -20,18 +20,8 @@ class reservationData {
 	public function getCoverage(){ return Payment_typeData::getById($this->coverage_id); }
 
 	public function add(){
-		$sql = "insert into reservation (
-
-		pacient_id,
-		category_id,
-
-		created_at) ";
-		$sql .= "value (
-
-		\"$this->pacient_id\",
-		\"$this->category_id\",
-
-		\"$this->created_at)";
+		$sql = "insert into reservation (medic_id,category_id,date_at,time_at,pacient_id,user_id,price,status_id,coverage_id,payment_id,payment_type_id,created_at) ";
+		$sql .= "value (\"$this->medic_id\",\"$this->category_id\",\"$this->date_at\",\"$this->time_at\",$this->pacient_id,$this->user_id,\"$this->price\",$this->status_id,$this->coverage_id,$this->payment_id,$this->payment_type_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 

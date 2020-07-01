@@ -1,58 +1,35 @@
 <?php 
 $user = PacientData::getById($_GET["id"]);
-$coverage = CoverageData::getAll();
 ?>
 <div class="row">
-  <div class="col-md-2"></div>
-	<div class="col-md-8">
+	<div class="col-md-8 col-md-offset-2">
     <div class="card">
       <div class="card-header" data-background-color="blue">
-        <h4 class="title">Editar datos de Usuario</h4>
+        <h4 class="title">Editar Paciente</h4>
       </div>
       <div class="card-content table-responsive">
       	<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=updatepacient" role="form">
-
           <div class="form-group">
-            <div class="col-md-12">
-              <label>Modalidad del Usuario: *</label>           
-              <select name="coverage_id" class="form-control" id="coverage_id" value="<?php echo $cat->lastname; ?>" required>
-                <?php foreach($coverage as $p):?>
-                <option value="<?php echo $p->id; ?>" <?php if($p->id==$user->coverage_id){ echo "selected"; }?>>
-                  <?php echo $p->lastname; ?>
-                </option>
-                <?php endforeach; ?>  
-              </select>           
-            </div>    
-          </div>
- 
-          
-          <div class="form-group">
-            <div class="col-md-12">
-              <label>Apellido: </label>
-              <input type="text" name="lastname" value="<?php echo $user->lastname;?>" required class="form-control" id="lastname">
+            <label for="inputEmail1" class="col-md-4">Apellido</label>
+            <div class="col-md-8">
+              <input type="text" name="lastname" value="<?php echo $user->lastname;?>" required class="form-control" id="lastname" placeholder="Apellido">
             </div>
           </div>          
-          
-
           <div class="form-group">
-            <div class="col-md-12">
-              <label>Nombre: </label>
-              <input type="text" name="name" value="<?php echo $user->name;?>" class="form-control" id="name">
+            <label for="inputEmail1" class="col-md-4">Nombre</label>
+            <div class="col-md-8">
+              <input type="text" name="name" value="<?php echo $user->name;?>" class="form-control" id="name" placeholder="Nombre">
             </div>
           </div>
-
-
           <div class="form-group">
-            <div class="col-md-12">
-              <label>N° de Documento: </label>
-              <input name="document" value="<?php echo $user->document;?>" required class="form-control" id="document">
+            <label for="inputEmail1" class="col-md-4">DNI</label>
+            <div class="col-md-8">
+              <input name="document" value="<?php echo $user->document;?>" required class="form-control" id="document" placeholder="Numero de Documento">
             </div>
           </div>
-
-
           <div class="form-group">
-            <div class="col-md-12">
-              <label>Sexo: </label>
+            <label for="inputEmail1" class="col-md-4">Genero*</label>
+            <div class="col-md-8">
               <label class="checkbox-inline">
                 <input type="radio" id="inlineCheckbox1" name="gender" required <?php if($user->gender=="h"){ echo "checked"; }?> value="h"> Hombre
               </label>
@@ -61,105 +38,67 @@ $coverage = CoverageData::getAll();
               </label>
             </div>
           </div>
-
-
           <div class="form-group">
-            <div class="col-md-12">
-              <label>Fecha de Nacimiento: </label>
-              <input type="date" name="day_of_birth" class="form-control" value="<?php echo $user->day_of_birth; ?>" id="day_of_birth">
+            <label for="inputEmail1" class="col-md-4">Fecha de Nacimiento</label>
+            <div class="col-md-8">
+              <input type="date" name="day_of_birth" class="form-control" value="<?php echo $user->day_of_birth; ?>"  id="address1" placeholder="Fecha de Nacimiento">
             </div>
           </div>
-
-
           <div class="form-group">
-            <div class="col-md-12">
-              <label>Dirección: </label>
-              <input type="text" name="address" value="<?php echo $user->address;?>" class="form-control" required id="address">
+            <label for="inputEmail1" class="col-md-4">Direccion</label>
+            <div class="col-md-8">
+              <input type="text" name="address" value="<?php echo $user->address;?>" class="form-control" required id="username" placeholder="Direccion">
             </div>
           </div>
-
-
           <div class="form-group">
-            <div class="col-md-12">
-              <label>Barrio: </label>
-              <input type="text" name="neigh" class="form-control" value="<?php echo $user->neigh;?>" id="neigh">
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <div class="col-md-12">
-              <label>Localidad: </label>
-              <input type="text" name="city" class="form-control" value="<?php echo $user->city;?>" id="city">
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <div class="col-md-12">
-              <label>Correo Electrónico: </label>
-              <input type="text" name="email" value="<?php echo $user->email;?>" class="form-control" id="email">
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <div class="col-md-12">
-              <label>Telefono Fijo: </label>
-              <input type="text" name="phone"  value="<?php echo $user->phone;?>"  class="form-control" id="phone">
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <div class="col-md-12">
-              <label>WhatsApp: *</label>
-              <input type="text" name="whatsapp"  value="<?php echo $user->whatsapp;?>"  class="form-control" id="whatsapp">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-md-12">
-              <label>Link Facebook:</label>
-              <input type="text" name="fb" class="form-control" value="<?php echo $user->fb;?>" id="fb">
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <div class="col-md-12">
-              <label>Link Instagram:</label>
-              <input type="text" name="ig" class="form-control" value="<?php echo $user->ig;?>" id="ig">
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <div class="col-md-12">
-              <label>Link LinkedIn:</label>
-              <input type="text" name="lk" class="form-control" value="<?php echo $user->lk;?>" id="lk">
+            <label for="inputEmail1" class="col-md-4 ">Localidad</label>
+            <div class="col-md-8">
+              <input type="text" name="city" class="form-control" value="<?php echo $user->city;?>"  id="city" placeholder="Localidad">
             </div>
           </div>          
-
-
-          <!--
+          <div class="form-group">
+            <label for="inputEmail1" class="col-md-4">Email*</label>
+            <div class="col-md-8">
+              <input type="text" name="email" value="<?php echo $user->email;?>" class="form-control" id="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail1" class="col-md-4">Telefono</label>
+            <div class="col-md-8">
+              <input type="text" name="phone"  value="<?php echo $user->phone;?>"  class="form-control" id="inputEmail1" placeholder="Telefono">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail1" class="col-md-4 ">Tipo de Cobertura</label>
+            <div class="col-md-8">
+              <label class="checkbox-inline">
+                <input type="radio" id="inlineCheckbox1" name="coverage" required <?php if($user->coverage=="p"){ echo "checked"; }?> value="p"> Particular
+              </label>
+              <label class="checkbox-inline">
+                <input type="radio" id="inlineCheckbox2" name="coverage" required <?php if($user->coverage=="o"){ echo "checked"; }?> value="o"> Obra Social
+              </label>
+            </div>
+          </div>  
+          <div class="form-group">
+            <label for="inputEmail1" class="col-md-4 ">Obra Social</label>
+            <div class="col-md-8">
+              <input type="text" name="obra" class="form-control" id="obra" placeholder="Obra Social" value="<?php echo $user->obra;?>">
+            </div>
+          </div>
           <div class="form-group">
             <label for="inputEmail1" class="col-md-4 ">N° Carnet/ Socio:</label>
             <div class="col-md-8">
               <input type="text" name="sick" class="form-control" id="sick" placeholder="Numero de Carnet/Socio" value="<?php echo $user->sick;?>">
             </div>
-          </div> -->
-
+          </div>
           <div class="form-group">
             <div class="col-md-offset-4 col-md-4 col-md-offset-4">
             <input type="hidden" name="user_id" value="<?php echo $user->id;?>">
-              <button type="submit" class="btn btn-success btn-lg btn-block">Guardar</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Actualizar Paciente</button>
             </div>
           </div>
-
         </form>
       </div>
     </div>
-	</div>
-  <div class="col-md-2"></div> 
+	</div> 
 </div>
